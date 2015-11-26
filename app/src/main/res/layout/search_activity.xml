@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/stockSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="请输入股票代码"
+        android:maxLength="15"
+        android:singleLine="true"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/findNothing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stockSearch"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:drawableTop="@mipmap/ic_launcher"
+        android:text="股票代码不存在"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/resultList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stockSearch"
+        android:drawSelectorOnTop="true"/>
+
+    <com.alex.develop.ui.StockKeyboard
+        android:id="@+id/keyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+
+</RelativeLayout>

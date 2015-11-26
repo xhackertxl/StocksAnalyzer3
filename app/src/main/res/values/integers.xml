@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Activity切换动画持续的时间 -->
+    <integer name="anim_duration">350</integer>
+    
+    <!-- Splash持续的时间 -->
+    <integer name="splash_duration">2500</integer>
+    
+    <!-- 两次Back的时间间隔 -->
+    <integer name="back_twice_duration">2500</integer>
+    
+    <!-- 默认亮色主题应用开始时间（上午8点） -->
+    <integer name="light_theme_start">8</integer>
+    
+    <!-- 默认亮色主题应用结束时间（下午6点） -->
+    <integer name="dark_theme_start">18</integer>
+
+    <integer name="stock_db_version">2</integer>
+    
+</resources>

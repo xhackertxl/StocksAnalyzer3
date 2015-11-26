@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 夜间主题使用 -->
+    <color name="stock_id">#92A0AD</color>
+    <color name="stock_name">#FFFFFF</color>
+
+    <!-- 白天主题使用 -->
+    <color name="stock_id_light">#92A0AD</color>
+    <color name="stock_name_light">#303C3F</color>
+
+    <color name="stock_rise">#EE4952</color>
+    <color name="stock_fall">#1ABE5B</color>
+    <color name="stock_suspended">#919FAC</color>
+
+    <color name="nav_bg">#252a33</color>
+    <color name="list_item_selected_bg">#FF5722</color>
+
+    <!-- 移动平均线的颜色 -->
+    <color name="ma_color_0">#DEDEDE</color>
+    <color name="ma_color_1">#FDA701</color>
+    <color name="ma_color_2">#E36396</color>
+    <color name="ma_color_3">#38886F</color>
+    <color name="ma_color_4">#4951F8</color>
+    <color name="ma_color_5">#4951F8</color>
+
+
+    <color name="table_header_text">#FDA701</color>
+    <color name="table_data_row_even">#4951F8</color>
+    <color name="table_data_row_odd">#E36396</color>
+</resources>

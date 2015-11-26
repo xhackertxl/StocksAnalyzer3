@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/stock_fragment_padding_left"
+        android:paddingRight="@dimen/stock_fragment_padding_right"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/codeRadio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="left"
+            android:text="@string/stock_code"
+            android:textSize="@dimen/stock_float" />
+
+        <RadioButton
+            android:id="@+id/priceRadio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/stock_price"
+            android:textSize="@dimen/stock_float" />
+
+        <RadioButton
+            android:id="@+id/increaseRadio"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/stock_increase"
+            android:textSize="@dimen/stock_float" />
+    </RadioGroup>
+
+    <com.alex.develop.adapter.SortableStockTableView
+        android:id="@+id/stockList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="false"
+        android:fastScrollEnabled="false"
+        custom:columnCount="7"
+        custom:headerElevation="10"
+        custom:headerColor="@color/abc_input_method_navigation_guard"
+        />
+</LinearLayout>

@@ -1,0 +1,87 @@
+<resources>
+
+    <string name="app_name">StockAnalyzer</string>
+    
+    <!-- confirm_dialog.xml -->
+    <string name="software_update">軟體更新</string>
+    <string name="update_features">
+        1. 【近场传输】0流量也能传照片？是！真！的！\n
+        2. 【相机商店】丰富的相机模式，提供插件化管理方式，用户可随意定义自己的相机，更多相机模式可在相机商店免费下载。\n
+        相机商店包括以下相机模式：特效，美肤自拍，最美证件照，轻相机，情景，趣味，移色，移轴，留声；\n
+        3. 【滤镜商店】插件化管理方式，更多滤镜可在滤镜商店免费下载。滤镜数量过百，每日使用次数超过2亿次；\n
+        4. 【拼图】备受用户喜爱的模板拼图和图片拼接，轻轻松松拼出好心情；\n
+        5【云相册】不只是更加人性化的智能管理，也是绝对安全的个人照片保险柜；\n
+        6【照片编辑】倾力打造全新编辑模块，特效叠加、裁剪旋转、细节调整、纹理、虚化随心改变。
+    </string>
+    <string name="ok">好</string>
+    <string name="cancel">不好</string>
+    
+    <!-- splash.xml -->
+    <string name="image_content">圖片</string>
+    
+    <!-- feature_1.xml -->
+    <string name="feature_demo_1">Demo 1</string>
+    
+    <!-- feature_2.xml -->
+    <string name="feature_demo_2">Demo 2</string>
+    
+    <!-- feature_3.xml -->
+    <string name="feature_demo_3">Demo 3</string>
+
+    <!-- BaseActivity.java -->
+    <string name="back_twice_to_exit">再按一次，退出軟體</string>
+    <string name="network_info">網絡錯誤</string>
+    <string name="network_not_available">沒有網絡，我也不知道怎麼回事兒</string>
+    <string name="app_exit">退出</string>
+    <string name="network_settings">設置網絡</string>
+
+    <!-- StockFragment.java -->
+    <string name="trade_suspended">停牌</string>
+
+    <!-- stock_fragment.xml-->
+    <string name="stock_code">名稱代碼</string>
+    <string name="stock_price">最新價</string>
+    <string name="stock_increase">漲跌幅</string>
+
+    <!-- splash.xml-->
+    <string name="start_tips_install">首次安裝，下載數據 %1$d</string>
+    <string name="start_tips_update">更新數據 %1$d</string>
+
+    <!-- stock_header_layout.xml-->
+    <string name="candle_new">最新 %1$s</string>
+    <string name="candle_close">收市 %1$s</string>
+    <string name="candle_open">開市 %1$s</string>
+    <string name="candle_high">最高 %1$s</string>
+    <string name="candle_volume">成交量 %1$s</string>
+    <string name="candle_volume_unit_million">萬(手)</string>
+
+    <string name="candle_change">漲幅 %1$s</string>
+    <string name="candle_exchange">換手 %1$s</string>
+    <string name="candle_low">最低 %1$s</string>
+    <string name="candle_amount">成交額 %1$s</string>
+    <string name="candle_amount_unit_hundred_million">億(元)</string>
+
+    <!-- CollectStockTask.java -->
+    <string name="collect_stock_success">%1$s 已成功加入自選股</string>
+    <string name="collect_stock_failure">%1$s 加入自選股失敗</string>
+    <string name="remove_stock_success">%1$s 已成功移出自選股</string>
+    <string name="remove_stock_failure">%1$s 移出自選股失敗</string>
+    <string name="selected_stock">所選股票</string>
+
+    <string name="key_ok">確定</string>
+    <string name="search_stock">股票搜尋</string>
+
+    <!-- StockFragment.java -->
+    <string name="contextual_add_collect">加入自選%1$s</string>
+    <string name="contextual_remove_collect">移出自選%1$s</string>
+
+    <!-- NewsListAdapter.java -->
+    <string name="news_time_second" >秒前</string>
+    <string name="news_time_minute" >分鐘前</string>
+    <string name="news_time_hour" >小時前</string>
+
+    <!-- NewsFragment.java -->
+    <string name="footer_load_move">釋放手指加載數據</string>
+    <string name="footer_no_move">沒有數據了</string>
+    
+</resources>

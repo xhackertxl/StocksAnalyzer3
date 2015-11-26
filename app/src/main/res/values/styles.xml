@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 暗色主题，适合夜间使用 -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#283593</item>
+        <item name="colorPrimary">#FF3F51B5</item>
+    </style>
+
+    <!-- 亮色主题，适合白天使用 -->
+    <style name="AppThemeLight" parent="android:Theme.Light">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#283593</item>
+        <item name="colorPrimary">#FF3F51B5</item>
+    </style>
+
+    <!-- 加载Dialog的样式 -->
+    <style name="LoadingDialogDefalut" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮动在Activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 模糊 -->
+    </style>
+
+    <!-- Activity之间的切换动画 -->
+    <style name="ActivityAnimation" parent="android:Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/in_from_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_from_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_from_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_from_right</item>
+    </style>
+
+    <!-- 全屏并可以设置启动和退出动画 -->
+    <style name="AppTheme.FullScreen">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="AppTheme.NoTitle">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="colorPrimaryDark">#283593</item>
+        <item name="colorPrimary">#FF3F51B5</item>
+        <!--<item name="android:windowActionBarOverlay">true</item>-->
+        <!--<item name="android:actionBarStyle">@style/CandleActionBar</item>-->
+    </style>
+
+    <style name="CandleActionBar">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- CandleActivity 控制按钮样式 -->
+    <style name="CtrlBtnStyle" parent="android:Widget.CompoundButton.RadioButton">
+        <item name="android:background">@drawable/ctrl_btn_bg_2</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/ctrl_btn_text_size</item>
+    </style>
+</resources>

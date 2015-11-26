@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 暗色主题，适合夜间使用(Android5.0+) -->
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+    
+    <!-- 亮色主题，适合白天使用 -->
+    <style name="AppThemeLight" parent="android:Theme.Material.Light">
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
+    </style>
+    
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="stock_code">15sp</dimen>
+    <dimen name="stock_name">15sp</dimen>
+    <dimen name="stock_float">20sp</dimen>
+
+    <dimen name="stock_fragment_padding_left">10dp</dimen>
+    <dimen name="stock_fragment_padding_right">10dp</dimen>
+
+    <dimen name="stock_header_space">5dp</dimen>
+    <dimen name="stock_header_padding">5dp</dimen>
+    
+    <dimen name="ctrl_btn_width">40dp</dimen>
+    <dimen name="ctrl_btn_height">25dp</dimen>
+    <dimen name="ctrl_btn_text_size">15sp</dimen>
+
+</resources>

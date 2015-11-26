@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical">
+
+    <Button
+        android:id="@+id/prev"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        android:background="@drawable/prev"
+        android:clickable="true"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stockName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上证指数" />
+
+        <TextView
+            android:id="@+id/stockCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="000001" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:scaleType="matrix"
+        android:background="@drawable/next"/>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/candleClose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_close" />
+
+            <TextView
+                android:id="@+id/candleOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_open"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+            <TextView
+                android:id="@+id/candleHigh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_high"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+            <TextView
+                android:id="@+id/candleVolume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_volume"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/candleChange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_change" />
+
+            <TextView
+                android:id="@+id/candleExchange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_exchange"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+            <TextView
+                android:id="@+id/candleLow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_low"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+            <TextView
+                android:id="@+id/candleAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/candle_amount"
+                android:layout_marginLeft="@dimen/stock_header_space"/>
+
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

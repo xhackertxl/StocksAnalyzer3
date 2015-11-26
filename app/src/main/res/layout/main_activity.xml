@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.alex.develop.ui.NonSlidableViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:scaleX="0.7"
+            android:scaleY="0.7"
+            android:src="@drawable/loading"
+            android:visibility="gone" />
+
+    </FrameLayout>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/nav_bg"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/marketStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="onNavClicked"
+            android:text="行情" />
+
+        <RadioButton
+            android:id="@+id/collectStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="onNavClicked"
+            android:text="自选" />
+
+        <RadioButton
+            android:id="@+id/positionStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="onNavClicked"
+            android:text="持仓" />
+
+        <RadioButton
+            android:id="@+id/selectStock"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="onNavClicked"
+            android:text="选股" />
+
+        <RadioButton
+            android:id="@+id/financeNews"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:onClick="onNavClicked"
+            android:text="新闻" />
+
+    </RadioGroup>
+</LinearLayout>

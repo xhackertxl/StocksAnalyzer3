@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/news_bg">
+
+    <ImageView
+        android:id="@+id/newsImg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/news_image_holder" />
+
+    <TextView
+        android:id="@+id/newsTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsImg"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:text="中珠控股作价19亿元并购一体医疗 拓展肿瘤诊疗市场"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/newsDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsTitle"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="证券时报网(www.stcn.com)09月21日讯　　停牌近5个月的中珠控股9月21日晚间公告称，拟19亿元收购一体医疗100%股权。同时拟配套融资不超过13亿元，主要用于重组完成后的业务整合、上市公司及标的公司项目建设、支付此次交易的相关费用及补充上市公司流动资金。公司股票将继..." />
+
+    <TextView
+        android:id="@+id/newsTimeASource"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/newsDesc"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:text="6小时前 | 中国新闻网" />
+
+</RelativeLayout>

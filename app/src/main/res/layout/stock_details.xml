@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingLeft="@dimen/stock_fragment_padding_left"
+    android:paddingRight="@dimen/stock_fragment_padding_right">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/stockName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/stock_name"
+            android:textSize="@dimen/stock_name" />
+
+        <TextView
+            android:id="@+id/stockCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/stock_id"
+            android:textSize="@dimen/stock_code" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/stockClose"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:textSize="@dimen/stock_float" />
+
+    <TextView
+        android:id="@+id/stockChange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:textSize="@dimen/stock_float" />
+
+</LinearLayout>

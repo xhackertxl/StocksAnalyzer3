@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusable="true">
+
+    <ProgressBar
+        android:id="@+id/footerLoadCircle"
+        style="@android:style/Widget.ProgressBar.Large.Inverse"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:indeterminate="false"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/footerText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/footer_load_move"
+        android:textSize="20sp"/>
+
+    <include layout="@layout/news_divider_view" />
+
+</LinearLayout>

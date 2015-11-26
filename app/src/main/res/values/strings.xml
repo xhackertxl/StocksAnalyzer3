@@ -1,0 +1,94 @@
+<resources>
+
+    <string name="app_name">StockAnalyzer</string>
+
+    <!-- confirm_dialog.xml -->
+    <string name="software_update">Software update</string>
+    <string name="update_features">
+        1. 【近场传输】0流量也能传照片？是！真！的！\n
+        2. 【相机商店】丰富的相机模式，提供插件化管理方式，用户可随意定义自己的相机，更多相机模式可在相机商店免费下载。\n
+        相机商店包括以下相机模式：特效，美肤自拍，最美证件照，轻相机，情景，趣味，移色，移轴，留声；\n
+        3. 【滤镜商店】插件化管理方式，更多滤镜可在滤镜商店免费下载。滤镜数量过百，每日使用次数超过2亿次；\n
+        4. 【拼图】备受用户喜爱的模板拼图和图片拼接，轻轻松松拼出好心情；\n
+        5【云相册】不只是更加人性化的智能管理，也是绝对安全的个人照片保险柜；\n
+        6【照片编辑】倾力打造全新编辑模块，特效叠加、裁剪旋转、细节调整、纹理、虚化随心改变。
+    </string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    
+    <!-- splash.xml -->
+    <string name="image_content">ImageView</string>
+    
+    <!-- feature_1.xml -->
+    <string name="feature_demo_1">Demo 1</string>
+    
+    <!-- feature_2.xml -->
+    <string name="feature_demo_2">Demo 2</string>
+    
+    <!-- feature_3.xml -->
+    <string name="feature_demo_3">Demo 3</string>
+    
+    <!-- BaseActivity.java -->
+    <string name="back_twice_to_exit">BACK AGAIN TO EXIT APP</string>
+    <string name="network_info">NetWork Information</string>
+    <string name="network_not_available">NetWork is not available</string>
+    <string name="app_exit">Exit</string>
+    <string name="network_settings">Setting</string>
+
+    <!-- StockFragment.java -->
+    <string name="trade_suspended">SUSP</string>
+
+    <!-- stock_fragment.xml-->
+    <string name="stock_code">NameCode</string>
+    <string name="stock_price">LatestPrice</string>
+    <string name="stock_increase">Extent</string>
+
+    <!-- splash.xml-->
+    <string name="start_tips_install">First install, downloading %1$d</string>
+    <string name="start_tips_update">Update data %1$d</string>
+
+    <!-- stock_header_layout.xml-->
+    <string name="candle_new">Price %1$s</string>
+    <string name="candle_close">Close %1$s</string>
+    <string name="candle_open">Open %1$s</string>
+    <string name="candle_high">High %1$s</string>
+    <string name="candle_volume">Volume %1$s</string>
+    <string name="candle_volume_unit_million">万(手)</string>
+
+    <string name="candle_change">Change %1$s</string>
+    <string name="candle_exchange">Exchange %1$s</string>
+    <string name="candle_low">Low %1$s</string>
+    <string name="candle_amount">Amount %1$s</string>
+    <string name="candle_amount_unit_hundred_million">亿(元)</string>
+
+    <!-- CollectStockTask.java -->
+    <string name="collect_stock_success">%1$s is collected success</string>
+    <string name="collect_stock_failure">%1$s is collected failure</string>
+    <string name="remove_stock_success">%1$s is removed success</string>
+    <string name="remove_stock_failure">%1$s is removed failure</string>
+    <string name="selected_stock">Selected stocks</string>
+
+    <string name="key_ok">OK</string>
+    <string name="search_stock">Search Stock</string>
+
+    <!-- StockFragment.java -->
+    <string name="contextual_add_collect">Add Collect%1$s</string>
+    <string name="contextual_remove_collect">Remove Collect%1$s</string>
+
+    <!-- NewsListAdapter.java -->
+    <string name="news_time_second" >seconds ago</string>
+    <string name="news_time_minute" >minutes ago</string>
+    <string name="news_time_hour" >hours ago</string>
+
+    <!-- NewsFragment.java -->
+    <string name="footer_load_move">Release finger to load more data</string>
+    <string name="footer_no_move">No more data</string>
+
+    <string name="lastClose">上次收盘</string>
+    <string name="open">今开盘</string>
+    <string name="high">今最高</string>
+    <string name="current">最新价</string>
+    <string name="low">今最低</string>
+    <string name="range">今涨幅</string>
+
+</resources>

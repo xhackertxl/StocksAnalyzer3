@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- Splash.java -->
+    <string name="key_first_launch">APP_FIRST_LAUNCH</string>
+    <string name="key_install_stamp">APP_INSTALL_STAMP</string>
+    <string name="key_use_count">APP_USE_COUNT</string>
+    
+    <string name="admob_unit_id">pub-9439716523405765</string>
+    <string name="admob_test_device">F409968388311AB2806E8E280CE38D47</string>
+    
+    <string name="youmi_pub_id">48ca1f69992df596</string>
+    <string name="youmi_ads_key">f8ae9444a6e560a7</string>
+    <string name="stock_db_name">stock_data_2015.db</string>
+
+    <string name="stock_default">--</string>
+
+    <string name="key_600">600</string>
+    <string name="key_300">300</string>
+    <string name="key_002">002</string>
+    <string name="key_123">123</string>
+    <string name="key_abc">ABC</string>
+    <string name="key_split">-</string>
+
+    <!-- NewsListAdapter.java -->
+    <string name="news_time_source" formatted="false">%1$s | %2$s</string>
+
+</resources>
