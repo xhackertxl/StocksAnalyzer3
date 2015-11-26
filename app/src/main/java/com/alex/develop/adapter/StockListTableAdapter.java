@@ -10,8 +10,8 @@ import android.widget.TextView;
 import com.alex.develop.entity.Stock;
 import com.alex.develop.stockanalyzer.Analyzer;
 import com.alex.develop.stockanalyzer.R;
+import com.alex.develop.util.Util;
 
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,13 +97,16 @@ public class StockListTableAdapter extends TableDataAdapter<Stock> {
             case 5:
                 // 股票涨幅
                 renderedView = new TextView(this.getContext());
-                DecimalFormat df=new DecimalFormat("######0.00");
-                String tmp;
+
+                String tmp = "";
                 try {
-                    double st1 = Double.valueOf(main_cost_one);
-                    double st2 = Double.valueOf(close);
-                    tmp = df.format(st1 - st2);
-                    stock.setMain_cost_one_change(Double.valueOf(tmp));
+                    if ( Util.isNumeric(close) ) {
+                        double st1 = Double.valueOf(main_cost_one);
+                        double st2 = Double.valueOf(close);
+                        double st3 = st1 - st2;
+                        tmp = Util.DecimalFormat.format(st1 - st2);
+                        stock.setMain_cost_one_change(Double.valueOf(st1 - st2));
+                    }
                 } catch (Exception e) {
                     tmp = "--";
                     e.printStackTrace();
@@ -114,12 +117,18 @@ public class StockListTableAdapter extends TableDataAdapter<Stock> {
             case 6:
                 // 股票涨幅
                 renderedView = new TextView(this.getContext());
-                df = new DecimalFormat("######0.00");
+
+                tmp = "";
                 try {
-                    double st1 = Double.valueOf(main_cost_twenty);
-                    double st2 = Double.valueOf(close);
-                    tmp = df.format(st1 - st2);
-                    stock.setMain_cost_twenty_change(Double.valueOf(tmp));
+                    if ( Util.isNumeric(close) )
+                    {
+                        double st1 = Double.valueOf(main_cost_twenty);
+                        double st2 = Double.valueOf(close);
+                        double st3 = st1 - st2;
+                        tmp = Util.DecimalFormat.format(st1 - st2);
+                        stock.setMain_cost_twenty_change(Double.valueOf(st1 - st2));
+                    }
+
                 } catch (Exception e) {
                     tmp = "--";
                     e.printStackTrace();

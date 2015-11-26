@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.alex.develop.easymoney.helper.TheMainCost;
 import com.alex.develop.entity.ApiStore;
 import com.alex.develop.entity.Stock;
 import com.alex.develop.stockanalyzer.Analyzer;
@@ -28,26 +29,33 @@ public class QueryStockToday extends AsyncTask<Stock, Void, Void> {
 
     @Override
     protected Void doInBackground(Stock... params) {
+        try {
+            String sinaApiUrl = ApiStore.getSinaTodayUrl(params);
+            String data = NetworkHelper.getWebContent(sinaApiUrl, ApiStore.SINA_CHARSET);
+            String[] lines = data.split(ApiStore.SBL_SEM);
+            int i = 0;
+            for (String line : lines) {
+                Stock stock = params[i];
+                String[] temp = line.substring(11).split(ApiStore.SBL_EQL);
+                temp[0] = temp[0].substring(2);
+                temp[1] = temp[1].substring(1, temp[1].length() - 1);
+                String id = temp[0];
+                String[] info = temp[1].split(ApiStore.SBL_CMA);
 
-        String sinaApiUrl = ApiStore.getSinaTodayUrl(params);
-        String data = NetworkHelper.getWebContent(sinaApiUrl, ApiStore.SINA_CHARSET);
-        String[] lines = data.split(ApiStore.SBL_SEM);
+                if(info.length <= 1)
+                {
+                    continue;
+                }
 
-        int i = 0;
-        for (String line : lines) {
-
-            Stock stock = params[i];
-
-            String[] temp = line.substring(11).split(ApiStore.SBL_EQL);
-            temp[0] = temp[0].substring(2);
-            temp[1] = temp[1].substring(1, temp[1].length()-1);
-            String id = temp[0];
-            String[] info = temp[1].split(ApiStore.SBL_CMA);
-            if (id.equals(stock.getCode())) {
-                stock.fromSina(info);
-                //TheMainCost.fetchDataFromWeb(stock.getCode(),stock);
+                if (id.equals(stock.getCode())) {
+                    stock.fromSina(info);
+                    System.out.println("start ------- A " + "ToDAY");
+                    TheMainCost.fetchDataFromWeb(stock.getCode(),stock);
+                }
+                ++i;
             }
-            ++i;
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return null;
     }

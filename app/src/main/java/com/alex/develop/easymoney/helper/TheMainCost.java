@@ -11,41 +11,38 @@ import java.io.IOException;
 
 public class TheMainCost {
     private final static String baseUrl = "http://data.eastmoney.com/stockcomment/";
-    private final static String deceive_baseUrl = "http://data.eastmoney.com/";
+
+
     public static void fetchDataFromWeb(String stockId, Stock stock) {
-        StringBuffer urlStr = new StringBuffer(baseUrl + stockId + ".html");
-        fetchDataFromWeb(stock,urlStr.toString());
-    }
-
-    public static void fetchDataFromWeb(String stockId,String radom, Stock stock) {
-        StringBuffer urlStr = new StringBuffer(baseUrl + stockId + ".html&" + radom);
-        fetchDataFromWeb(stock,urlStr.toString());
-    }
-
-    public static void fetchDataFromWeb(Stock stock,String urlStr) {
-        try {
-            Connection conn = Jsoup.connect(urlStr);
-            // 修改http包中的header,伪装成浏览器进行抓取
-            conn.header("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:32.0) Gecko/    20100101 Firefox/32.0");
-            Document doc = null;
+        if(stock.getMain_cost_one() > 0 )
+        {
+            return;
+        }
+        synchronized (TheMainCost.class) {
+            StringBuffer urlStr = new StringBuffer(baseUrl + stockId + ".html");
             try {
-                doc = conn.get();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+                Connection conn = Jsoup.connect(urlStr.toString());
+                // 修改http包中的header,伪装成浏览器进行抓取
+                conn.header("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:32.0) Gecko/    20100101 Firefox/32.0");
+                Document doc = null;
+                try {
+                    doc = conn.get();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
 
-            //取主力成本
-            Element sp_zlcb = doc.getElementById("sp_zlcb");
-            String[] zl = sp_zlcb.text().toString().split("，");
-            String one = zl[0];
-            String zh1day = one.substring(one.indexOf("成本") + 2, one.indexOf("元"));
-            stock.setMain_cost_one(Float.parseFloat(zh1day));
-            System.out.println(zh1day);
+                //取主力成本
+                Element sp_zlcb = doc.getElementById("sp_zlcb");
+                String[] zl = sp_zlcb.text().toString().split("，");
+                String one = zl[0];
+                String zh1day = one.substring(one.indexOf("成本") + 2, one.indexOf("元"));
+                stock.setMain_cost_one(Float.parseFloat(zh1day));
+                System.out.println(zh1day);
 
-            String twenty = zl[0];
-            String zh20day = one.substring(one.indexOf("成本") + 2, one.indexOf("元"));
-            stock.setMain_cost_twenty(Float.parseFloat(zh20day));
-            System.out.println(zh20day);
+                String twenty = zl[0];
+                String zh20day = one.substring(one.indexOf("成本") + 2, one.indexOf("元"));
+                stock.setMain_cost_twenty(Float.parseFloat(zh20day));
+                System.out.println(zh20day);
 
 //            Element sp_zjlx = doc.getElementById("sp_zjlx");
 //            Element mainRun = sp_zjlx.getElementsByIndexEquals(0).get(1);
@@ -55,25 +52,9 @@ public class TheMainCost {
 //            stock.setMain_cost_twenty_change(Float.parseFloat(bigRun.text()));
 //            System.out.println(bigRun.text());
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
-
-    public static void fetchDataFromWeb_deceive(String s) {
-        Connection conn = null;
-        try {
-            conn = Jsoup.connect(deceive_baseUrl+s);
-            // 修改http包中的header,伪装成浏览器进行抓取
-            conn.header("User-Agent", "Mozilla/5.0 (X11; Linux x86_64; rv:32.0) Gecko/    20100101 Firefox/32.0");
-            try {
-                conn.get();
-            } catch (IOException e) {
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 

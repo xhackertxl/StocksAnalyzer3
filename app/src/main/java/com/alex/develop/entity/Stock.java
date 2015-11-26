@@ -16,6 +16,7 @@ import org.json.JSONObject;
  * 一只股票
  */
 public final class Stock extends BaseObject {
+    private static final String TAG = "com.alex.develop.entity.BaseObject";
 
     public static class Table {
 
@@ -323,37 +324,36 @@ public final class Stock extends BaseObject {
     }
 
     public void fromSina(String[] data) {
-        if(null == data || data.length <= 1 )
-        {
-            return;
+        try {
+            if(data.length <= 1)
+            {
+                return;
+            }
+            today.setOpen(Float.valueOf(data[1]));// 开盘价
+            today.setLastClose(Float.valueOf(data[2])); // 昨日收盘价
+            today.setClose(Float.valueOf(data[3]));// 当前价格
+            today.setHigh(Float.valueOf(data[4]));// 今日最高价
+            today.setLow(Float.valueOf(data[5]));// 今日最低价
+            today.setVolume(Long.valueOf(data[8]));// 成交量(单位：股)
+            today.setAmount(Float.valueOf(data[9]));// 成交额(单位：元)
+            today.initialize();
+            for (int i = 10, j = 11, m = 20, n = 21, k = 0; k < ApiStore.SINA_ENTRUST_LEVEL; i += 2, j += 2, m += 2, n += 2, ++k) {
+                // 委买
+                buyVolume[k] = Long.valueOf(data[i]);// 买k+1数量(单位：股)
+                buyPrice[k] = Float.valueOf(data[j]);// 买k+1报价(单位：元)
+
+                // 委卖
+                saleVolume[k] = Long.valueOf(data[m]);// 卖k+1数量(单位：股)
+                salePrice[k] = Float.valueOf(data[n]);// 卖k+1报价（单位：元）
+            }
+            today.setDate(data[30].replace(ApiStore.SBL_MINUS, ""));
+            time = data[31];
+            suspend = data[32].equals(ApiStore.SINA_SUSPEND);
+            stamp = System.currentTimeMillis();
+        } catch (Exception e) {
+            e.printStackTrace();
+            Log.e(TAG,e.getMessage());
         }
-        today.setOpen(Float.valueOf(data[1]));// 开盘价
-        today.setLastClose(Float.valueOf(data[2])); // 昨日收盘价
-        today.setClose(Float.valueOf(data[3]));// 当前价格
-        today.setHigh(Float.valueOf(data[4]));// 今日最高价
-        today.setLow(Float.valueOf(data[5]));// 今日最低价
-        today.setVolume(Long.valueOf(data[8]));// 成交量(单位：股)
-        today.setAmount(Float.valueOf(data[9]));// 成交额(单位：元)
-
-
-        today.initialize();
-
-        for (int i = 10, j = 11, m = 20, n = 21, k = 0; k < ApiStore.SINA_ENTRUST_LEVEL; i += 2, j += 2, m += 2, n += 2, ++k) {
-
-            // 委买
-            buyVolume[k] = Long.valueOf(data[i]);// 买k+1数量(单位：股)
-            buyPrice[k] = Float.valueOf(data[j]);// 买k+1报价(单位：元)
-
-            // 委卖
-            saleVolume[k] = Long.valueOf(data[m]);// 卖k+1数量(单位：股)
-            salePrice[k] = Float.valueOf(data[n]);// 卖k+1报价（单位：元）
-        }
-
-        today.setDate(data[30].replace(ApiStore.SBL_MINUS, ""));
-        time = data[31];
-        suspend = data[32].equals(ApiStore.SINA_SUSPEND);
-
-        stamp = System.currentTimeMillis();
     }
 
     /**

@@ -84,7 +84,6 @@ public class NetworkHelper {
                 }
                 if (id.equals(stock.getCode())) {
                     stock.fromSina(info);
-                    //TheMainCost.fetchDataFromWeb(stock.getCode(),stock);
                 }
                 ++i;
             }

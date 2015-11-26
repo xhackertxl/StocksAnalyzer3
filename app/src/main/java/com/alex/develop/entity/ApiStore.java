@@ -20,28 +20,70 @@ public class ApiStore {
 
     /**
      * 生成查询当日股票行情的新浪API字符串
+     *
      * @param stocks 股票列表
      * @return
      */
     public static String getSinaTodayUrl(Stock... stocks) {
         StringBuilder builder = new StringBuilder();
-
-        for(Stock stock : stocks) {
-
-            String prefix = SINA_SZ_PREFIX;
-            if(shOrsz(stock)) {
-                prefix = SINA_SH_PREFIX;
+        try {
+            for (Stock stock : stocks) {
+                String prefix = SINA_SZ_PREFIX;
+                if (shOrsz(stock)) {
+                    prefix = SINA_SH_PREFIX;
+                }
+                builder.append(",");
+                builder.append(prefix);
+                builder.append(stock.getCode());
             }
 
-            builder.append(",");
-            builder.append(prefix);
-            builder.append(stock.getCode());
+            builder.delete(0, 1);
+            builder.insert(0, SINA_TODAY);
+
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-
-        builder.delete(0, 1);
-        builder.insert(0, SINA_TODAY);
-
         return builder.toString();
+    }
+
+    /**
+     * 生成查询当日股票行情的新浪API字符串
+     *
+     * @param stocks 股票列表
+     * @param requestLength  get 请求最长字符串
+     * @return
+     */
+    public static String[] getSinaTodayUrl(int requestLength, Stock... stocks) {
+        String[] result = new String[1];
+        int index = 0;
+
+        StringBuilder builder = new StringBuilder();
+        try {
+            for (Stock stock : stocks) {
+                String prefix = SINA_SZ_PREFIX;
+                if (shOrsz(stock)) {
+                    prefix = SINA_SH_PREFIX;
+                }
+                builder.append(",");
+                builder.append(prefix);
+                builder.append(stock.getCode());
+
+                if(builder.length() > requestLength)
+                {
+                    builder.delete(0, 1);
+                    builder.insert(0, SINA_TODAY);
+                    result[index] = builder.toString();
+                    builder = new StringBuilder();
+                    index++;
+                }
+            }
+            builder.delete(0, 1);
+            builder.insert(0, SINA_TODAY);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return result;
     }
 
     public static String getSohuHistoryUrl(String stockCode, String start, String end, Enum.Period period) {
@@ -52,9 +94,9 @@ public class ApiStore {
         StringBuilder builder = new StringBuilder();
         builder.append(SOHU_HISTORY);
 
-        if(Constant.ZS_SZZS_CODE.equals(stockCode)) {// 上证指数
+        if (Constant.ZS_SZZS_CODE.equals(stockCode)) {// 上证指数
             builder.append("zs_000001");
-        } else if(Constant.ZS_SZCZ_CODE.equals(stockCode)) {// 深证成指
+        } else if (Constant.ZS_SZCZ_CODE.equals(stockCode)) {// 深证成指
             builder.append("zs_399001");
         } else {// 股票代码
             builder.append("cn_");
@@ -70,7 +112,7 @@ public class ApiStore {
         builder.append(end);
 
         // 是否统计
-        if(statistics) {
+        if (statistics) {
             builder.append("&stat=1");
         }
 
@@ -206,7 +248,7 @@ public class ApiStore {
      * 新浪的股票行情实时接口
      * EG-SH : http://hq.sinajs.cn/list=sh601919（上海A股）
      * EG-SZ : http://hq.sinajs.cn/list=sz000783（深圳A股）
-     *  MORE : http://hq.sinajs.cn/list=sz000783,sz000698,sh601919
+     * MORE : http://hq.sinajs.cn/list=sz000783,sz000698,sh601919
      */
     public final static int SINA_REFRESH_INTERVAL = 5000;// 5秒刷新间隔
     public final static int SINA_ENTRUST_LEVEL = 5;// 5档委托数据
